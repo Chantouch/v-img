@@ -11,7 +11,7 @@
     "build": "cross-env NODE_ENV=production rollup -c",
     "watch": "cross-env NODE_ENV=development rollup -c -w"
   },
-  "repository": "https://github.com/crowdbotics/v-img",
+  "repository": "https://github.com/Chantouch/v-img",
   "keywords": [
     "vue",
     "images",
@@ -26,7 +26,7 @@
     "lib",
     "dist"
   ],
-  "homepage": "https://github.com/crowdbotics/v-img",
+  "homepage": "https://github.com/Chantouch/v-img",
   "dependencies": {},
   "devDependencies": {
     "babel-eslint": "^7.2.3",

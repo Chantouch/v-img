@@ -1,5 +1,5 @@
 {
-  "name": "vue2-img",
+  "name": "@chantouch/vue-img",
   "version": "0.0.1",
   "description": "Vuejs plugin for image viewing",
   "main": "dist/v-img.js",

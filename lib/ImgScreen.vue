@@ -182,7 +182,7 @@
   };
 </script>
 
-<style lang="scss">
+<style>
     * {
         -webkit-box-sizing: border-box;
         box-sizing: border-box;

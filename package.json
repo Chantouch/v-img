@@ -1,11 +1,11 @@
 {
-  "name": "v-img",
-  "version": "0.2.0",
+  "name": "vue-img",
+  "version": "0.0.1",
   "description": "Vuejs plugin for image viewing",
   "main": "dist/v-img.js",
   "module": "dist/v-img.mjs",
   "jsnext:main": "dist/v-img.mjs",
-  "author": "Crowdbotics team",
+  "author": "Chantouch Sek",
   "scripts": {
     "prebuild": "eslint lib test",
     "build": "cross-env NODE_ENV=production rollup -c",

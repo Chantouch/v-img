@@ -1,17 +1,16 @@
 <template>
-    <v-ons-modal :visible="!closed" @click.self="close" @deviceBackButton="close()">
-        <transition appear name="v-img-fade">
-            <div class="fullscreen-v-img">
-                <div class="header-v-img">
+    <transition appear name="v-img-fade">
+        <v-ons-modal :visible="!closed" @click.self="close" @deviceBackButton="close()">
+            <div class="header-v-img">
                 <span class="count-v-img">
                   <span v-if="images.length > 1">
                     {{ currentImageIndex + 1 }}/{{ images.length }}
                   </span>
                 </span>
-                    <span class="title-v-img">
+                <span class="title-v-img">
                   {{ titles[currentImageIndex] }}
                 </span>
-                    <div class="buttons-v-img">
+                <div class="buttons-v-img">
                     <span v-if="sourceButtons[currentImageIndex]">
                     <a :href="images[currentImageIndex]" target="_blank">
                       <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
@@ -24,38 +23,37 @@
                       </svg>
                     </a>
                   </span>
-                        <span @click="close">&times;</span>
-                    </div>
+                    <span @click="close">&times;</span>
                 </div>
-                <transition appear name="v-img-fade">
+            </div>
+            <transition appear name="v-img-fade">
                 <span v-if="visibleUI && images.length !== 1" class="prev-v-img" @click="prev">
                   <svg width="25" height="25" viewBox="0 0 1792 1915" xmlns="http://www.w3.org/2000/svg">
                     <path d="M1664 896v128q0 53-32.5 90.5t-84.5 37.5h-704l293 294q38 36 38 90t-38 90l-75 76q-37 37-90 37-52 0-91-37l-651-652q-37-37-37-90 0-52 37-91l651-650q38-38 91-38 52 0 90 38l75 74q38 38 38 91t-38 91l-293 293h704q52 0 84.5 37.5t32.5 90.5z"
                           fill="#fff"/>
                   </svg>
                 </span>
-                </transition>
-                <transition appear name="v-img-fade">
+            </transition>
+            <transition appear name="v-img-fade">
                 <span v-if="visibleUI && images.length !== 1" class="next-v-img" @click="next">
                   <svg width="25" height="25" viewBox="0 0 1792 1915" xmlns="http://www.w3.org/2000/svg">
                     <path d="M1600 960q0 54-37 91l-651 651q-39 37-91 37-51 0-90-37l-75-75q-38-38-38-91t38-91l293-293h-704q-52 0-84.5-37.5t-32.5-90.5v-128q0-53 32.5-90.5t84.5-37.5h704l-293-294q-38-36-38-90t38-90l75-75q38-38 90-38 53 0 91 38l651 651q37 35 37 90z"
                           fill="#fff"/>
                   </svg>
                 </span>
-                </transition>
-                <div class="footer-v-img" v-if="thumbnails && images.length > 1">
-                    <img v-for="(thumbnail, index) in images"
-                         :key="index"
-                         :src="thumbnail"
-                         @click="select(index)"
-                         :class="{'is-selected': currentImageIndex === index}">
-                </div>
-                <div class="content-v-img">
-                    <img :src="images[currentImageIndex]" @click="next">
-                </div>
+            </transition>
+            <div class="footer-v-img" v-if="thumbnails && images.length > 1">
+                <img v-for="(thumbnail, index) in images"
+                     :key="index"
+                     :src="thumbnail"
+                     @click="select(index)"
+                     :class="{'is-selected': currentImageIndex === index}">
             </div>
-        </transition>
-    </v-ons-modal>
+            <div class="content-v-img">
+                <img :src="images[currentImageIndex]" @click="next">
+            </div>
+        </v-ons-modal>
+    </transition>
 </template>
 
 <script>
